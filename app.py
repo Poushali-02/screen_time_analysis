@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import joblib
 import warnings
+import os
 from enhancement import map_hours,gender, map_device, map_impact, addiction_map, place
 warnings.filterwarnings("ignore")
 
@@ -62,4 +63,5 @@ def predict():
     return render_template('index.html', data=None)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
