@@ -37,7 +37,7 @@ def predict():
         place_input = request.form['place']
         
         # Preprocess the input data
-        age_input = map_hours(float(age_input))
+        age_input = int(age_input)
         gender_input = gender(gender_input)
         screen_time = map_hours(float(screen_time))
         device_input = map_device(device_input)
